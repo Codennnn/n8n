@@ -58,7 +58,7 @@ type ActionTypes = (typeof ACTION_TYPES)[keyof typeof ACTION_TYPES];
 
 const createWorkflowButton = computed(() => ({
 	value: ACTION_TYPES.WORKFLOW,
-	label: 'Create Workflow',
+	label: '创建工作流',
 	icon: sourceControlStore.preferences.branchReadOnly ? 'lock' : undefined,
 	size: 'mini' as const,
 	disabled:
