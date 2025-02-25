@@ -44,6 +44,10 @@ const appGrid = ref<Element | null>(null);
 
 const assistantSidebarWidth = computed(() => assistantStore.chatWidth);
 
+const showSidebar = computed(() => {
+	return !route.query.layout?.includes('hideSidebar');
+});
+
 onMounted(async () => {
 	setAppZIndexes();
 	logHiringBanner();
@@ -102,7 +106,7 @@ watch(defaultLocale, (newLocale) => {
 			<div id="header" :class="$style.header">
 				<RouterView name="header" />
 			</div>
-			<div v-if="usersStore.currentUser" id="sidebar" :class="$style.sidebar">
+			<div v-if="usersStore.currentUser" v-show="showSidebar" id="sidebar" :class="$style.sidebar">
 				<RouterView name="sidebar" />
 			</div>
 			<div id="content" :class="$style.content">
