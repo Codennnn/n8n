@@ -7,7 +7,7 @@ import type { INodeTranslationHeaders } from '@/Interface';
 import { useUIStore } from '@/stores/ui.store';
 import { useNDVStore } from '@/stores/ndv.store';
 import { useRootStore } from '@/stores/root.store';
-import englishBaseText from './locales/en.json';
+import chineseBaseText from './locales/zh.json';
 import {
 	deriveMiddleKey,
 	isNestedInCollectionLike,
@@ -16,9 +16,9 @@ import {
 } from './utils';
 
 export const i18nInstance = createI18n({
-	locale: 'en',
-	fallbackLocale: 'en',
-	messages: { en: englishBaseText },
+	locale: 'zh',
+	fallbackLocale: 'zh',
+	messages: { zh: chineseBaseText },
 	warnHtmlInMessage: 'off',
 });
 
